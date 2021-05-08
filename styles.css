@@ -1,0 +1,89 @@
+body {
+  background-color: #6dc9c8;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+h1 {
+  margin: 30px 30px 40px;
+  color: #0e3150
+}
+.calculator {
+  width: 400px;
+  height: 620px;
+  background-color: #8ba4bb;
+  margin: auto;
+  border-radius: 5%;
+  padding: 5px;
+  box-shadow: 3px 3px;
+  
+}
+
+/********result********/
+
+.result {
+  margin: 20px 25px 30px;
+  height: 120px;
+  text-align: center;
+  background-color: rgb(233, 233, 233);
+  border-radius: 15px 15px 15px 15px;
+  
+}
+.output{
+  margin-bottom: 10px;
+}
+.output-value {
+  text-align: right;
+  font-size: 2rem;
+}
+
+
+.history-value {
+  text-align: right;
+  font-size: 1.5rem;
+}
+
+
+/********keyboard******/
+
+.keyboard {
+  height: 400px;
+  padding-top: 20px;
+}
+.number {
+  border-radius: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 5px;
+  height: 70px;
+  width: 70px;
+}
+.operator {
+  border-radius: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 5px;
+  height: 70px;
+  width: 70px;
+}
+.empty {
+  border-radius: 100%;
+  border: 0;
+  padding: 10px;
+  margin: 5px;
+  height: 70px;
+  width: 70px;
+  background-color: #8ba4bb;
+  color: #8ba4bb;
+}
+.pressed {
+  box-shadow: 0 3px 4px 0 #DBEDF3;
+  opacity: 0.5;
+}
+
+
+/** 0e3150 **/
+/** 6dc9c8 **/
+/** ffc0c2 **/
+/** f7e9e3 **/
+
