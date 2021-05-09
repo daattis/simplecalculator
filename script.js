@@ -1,57 +1,68 @@
-// Calculator operators:
-function calculator (num1, num2, operator) {
-    return operator(num1, num2);
+//Display clicked values to screen:
+function getOutput () {
+    return document.querySelector("p.output-value").innerHTML;
+}
+function printOutput (num) { 
+    document.querySelector("p.output-value").innerHTML = num;
+    }
+function getHistory () {
+    return document.querySelector("p.history-value").innerHTML;
+}
+function printHistory (num) {
+    document.querySelector("p.history-value").innerHTML = num;
 }
 
+// Eventlistener ------------ OPERATOR KEYS:
 
-function add (num1, num2) {
-    return num1 + num2;
-}
+var operator = document.getElementsByClassName("operator");
 
-function subtract (num1, num2) {
-    num1 - num2;
-}
-
-function multiply (num1, num2) {
-    return num1 * num2;
-}
-
-
-function divide (num1, num2) {
-    return num1 / num2;
-}
-
-
-// Kutsu esim: calculator(5,5,add)
-
-// Button animation to all buttons with a loop
-
-for (var i = 0; i < document.querySelectorAll(".btn").length; i++) {
-
-document.querySelectorAll(".btn")[i].addEventListener("click", function (){
-    
-    // Which button was pressed? Binded to a variable
+for (var i = 0; i < operator.length; i++) {
+    operator[i].addEventListener("click", function () {
+        
+        // C/erase -> clear the screen
+        if (this.id == "C") {
+            printOutput("");
+            printHistory("");
+        } else if (this.id == "CE") {
+            printOutput("");
+        } else if (this.id == "erase") {
+            let currentValue = document.querySelector("p.output-value").innerHTML;
+            let erasedValue = currentValue.slice(0,(currentValue.length - 1));
+            printOutput(erasedValue);
+        } 
+  
     let buttonId = this.id;
-
-    //Call function which shows an animation:
     buttonAnimation(buttonId);
+    });
+}
+
+// Eventlistener ------------ NUMBER KEYS:
+
+var number = document.getElementsByClassName("number");
+
+
+for (var i = 0; i < number.length; i++) {
+    number[i].addEventListener("click", function (){
     
-});
+     let buttonId = this.id;
+     buttonAnimation(buttonId);
+
+    printOutput(this.innerHTML);
+         
+    });
 }
 
 
+// Button animation
 
 function buttonAnimation (currentKey) {
     
   var activeButton = document.querySelector("#" + currentKey);
-  
-    // Add a class from CSS to a element
+
 activeButton.classList.add("pressed");
-   // palauttaa alkuperäisen classin kuvaan pienen viiveen jälkeen:
-   
+  
 setTimeout(function(){
     activeButton.classList.remove("pressed");
-    /// odotusaika:
 }, 100);
 
 }
