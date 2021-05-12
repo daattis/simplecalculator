@@ -1,22 +1,22 @@
 body {
-  background-color: #6dc9c8;
+  background-color: #155263;
   text-align: center;
   font-family: 'Lato', sans-serif;
   font-weight: bold;
 }
 h1 {
   margin: 30px 30px 40px;
-  color: #0e3150
+  color: #061624
 }
 .calculator {
   width: 400px;
   height: 620px;
-  background-color: #8ba4bb;
+  background-color: #ff6f3c;
   margin: auto;
   border-radius: 5%;
   padding: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border: black 1px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.19), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
 }
 
 /********result********/
@@ -78,8 +78,8 @@ h1 {
   margin: 5px;
   height: 70px;
   width: 70px;
-  background-color: #8ba4bb;
-  color: #8ba4bb;
+  background-color: #ff6f3c;
+  color: #ff6f3c;
 }
 .pressed {
   box-shadow: 0 3px 4px 0 #DBEDF3;
@@ -87,8 +87,8 @@ h1 {
 }
 
 
-/** 0e3150 **/
-/** 6dc9c8 **/
-/** ffc0c2 **/
-/** f7e9e3 **/
+/** 155263 **/
+/** ff6f3c **/
+/** ff9a3c **/
+/** ffc93c **/
 

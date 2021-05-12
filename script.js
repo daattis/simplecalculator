@@ -1,16 +1,31 @@
-//Display clicked values to screen:
+//--------Display clicked values to screen:
 function getOutput () {
-    return document.querySelector("p.output-value").innerHTML;
+    return document.querySelector(".output-value").innerHTML;
 }
 function printOutput (num) { 
-    document.querySelector("p.output-value").innerHTML = num;
+    if (num=="") {
+        document.querySelector(".output-value").innerHTML = num;   
+    } else {
+    document.querySelector(".output-value").innerHTML = getFormattedNumber(num);
     }
+}
 function getHistory () {
-    return document.querySelector("p.history-value").innerHTML;
+    return document.querySelector(".history-value").innerHTML;
 }
 function printHistory (num) {
-    document.querySelector("p.history-value").innerHTML = num;
+    document.querySelector(".history-value").innerHTML = num;
 }
+
+function getFormattedNumber (num) {
+    let n = Number(num);
+    let value = n.toLocaleString("en");
+    return value;
+}
+
+function reverseNumberFormat (num) {
+    return Number(num.replace(/,/g,''))
+}
+
 
 // Eventlistener ------------ OPERATOR KEYS:
 
@@ -25,10 +40,6 @@ for (var i = 0; i < operator.length; i++) {
             printHistory("");
         } else if (this.id == "CE") {
             printOutput("");
-        } else if (this.id == "erase") {
-            let currentValue = document.querySelector("p.output-value").innerHTML;
-            let erasedValue = currentValue.slice(0,(currentValue.length - 1));
-            printOutput(erasedValue);
         } 
   
     let buttonId = this.id;
@@ -40,20 +51,24 @@ for (var i = 0; i < operator.length; i++) {
 
 var number = document.getElementsByClassName("number");
 
-
 for (var i = 0; i < number.length; i++) {
-    number[i].addEventListener("click", function (){
-    
+    number[i].addEventListener('click', function (){
+        var output = reverseNumberFormat(getOutput());
+        
+        
+        output = output + this.innerHTML;
+        printOutput(output);
+        
+
      let buttonId = this.id;
      buttonAnimation(buttonId);
-
-    printOutput(this.innerHTML);
-         
+    
+                
     });
 }
 
 
-// Button animation
+// ---------Button animation--------------
 
 function buttonAnimation (currentKey) {
     
